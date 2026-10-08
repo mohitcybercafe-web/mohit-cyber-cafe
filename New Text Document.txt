@@ -1,26 +1,688 @@
-console.log("Mohit Cyber Cafe Website Loaded!");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 
-// Smooth scrolling
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-document.querySelectorAll('a[href^="#"]').forEach(function(link) {
 
-    link.addEventListener("click", function(event) {
+html {
+    scroll-behavior: smooth;
+}
 
-        const section = document.querySelector(
-            this.getAttribute("href")
-        );
 
-        if (section) {
+body {
+    background: #080a0f;
+    color: #ffffff;
+    font-family: "DM Sans", sans-serif;
+}
 
-            event.preventDefault();
 
-            section.scrollIntoView({
-                behavior: "smooth"
-            });
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        }
 
-    });
 
-});
+/* HEADER */
+
+header {
+    height: 82px;
+
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #20232b;
+
+    background: rgba(8,10,15,0.95);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.logo-box {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #d8b36a;
+
+    border-radius: 10px;
+
+    display: grid;
+    place-items: center;
+
+    color: #d8b36a;
+
+    font-weight: bold;
+}
+
+
+.logo h2 {
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
+
+.logo span {
+    display: block;
+
+    color: #888d99;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+
+nav {
+    display: flex;
+    gap: 32px;
+}
+
+
+nav a {
+    color: #b7bac3;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+
+nav a:hover {
+    color: #d8b36a;
+}
+
+
+.top-button {
+    background: #d8b36a;
+
+    color: #111;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+
+/* HERO */
+
+.hero {
+    min-height: 680px;
+
+    padding: 90px 7%;
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    background:
+    radial-gradient(
+        circle at 80% 40%,
+        rgba(216,179,106,0.15),
+        transparent 35%
+    );
+}
+
+
+.small-title {
+    color: #d8b36a;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 6vw, 80px);
+
+    line-height: 1.05;
+
+    max-width: 700px;
+}
+
+
+.hero h1 span {
+    color: #d8b36a;
+}
+
+
+.description {
+    color: #999eaa;
+
+    max-width: 570px;
+
+    font-size: 17px;
+
+    margin: 28px 0;
+}
+
+
+.buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+
+.main-button {
+    background: #d8b36a;
+
+    color: #111;
+
+    padding: 14px 23px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    font-size: 13px;
+}
+
+
+.second-button {
+    border: 1px solid #30333b;
+
+    padding: 13px 23px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+}
+
+
+
+/* HERO CARD */
+
+.hero-card {
+    min-height: 440px;
+
+    padding: 45px;
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(216,179,106,0.3);
+
+    background:
+    linear-gradient(
+        145deg,
+        #191c25,
+        #0c0f15
+    );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+
+
+.card-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #d8b36a;
+
+    font-weight: bold;
+}
+
+
+.card-top p {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #888d99;
+}
+
+
+.card-content p {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #888d99;
+}
+
+
+.card-content h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 48px;
+
+    line-height: 1;
+
+    margin: 12px 0;
+}
+
+
+.gold-line {
+    width: 55px;
+
+    height: 2px;
+
+    background: #d8b36a;
+
+    margin: 20px 0;
+}
+
+
+.card-content span {
+    color: #999eaa;
+}
+
+
+.card-bottom {
+    color: #76d29b;
+
+    font-size: 12px;
+}
+
+
+
+/* SERVICES */
+
+.services {
+    padding: 110px 7%;
+}
+
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 50px;
+}
+
+
+.section-heading h2,
+.price-title h2,
+.contact h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 48px;
+
+    line-height: 1.1;
+}
+
+
+.section-heading h2 span,
+.contact h2 span {
+    color: #d8b36a;
+}
+
+
+.section-heading > p {
+    max-width: 420px;
+
+    color: #999eaa;
+}
+
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 15px;
+}
+
+
+.service-card {
+    min-height: 310px;
+
+    padding: 30px 25px;
+
+    background: #11141b;
+
+    border: 1px solid #242730;
+
+    border-radius: 18px;
+
+    transition: 0.3s;
+}
+
+
+.service-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #d8b36a;
+}
+
+
+.number {
+    color: #777c87;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.icon {
+    font-size: 32px;
+
+    color: #d8b36a;
+
+    margin: 40px 0 20px;
+}
+
+
+.service-card h3 {
+    font-size: 19px;
+}
+
+
+.service-card p {
+    color: #8e939f;
+
+    font-size: 13px;
+
+    margin: 10px 0 25px;
+}
+
+
+.service-card strong {
+    color: #d8b36a;
+
+    font-size: 22px;
+}
+
+
+.service-card small {
+    color: #888d99;
+
+    font-size: 10px;
+}
+
+
+
+/* PRICE */
+
+.prices {
+    padding: 0 7% 110px;
+}
+
+
+.price-box {
+    background: #151821;
+
+    border: 1px solid #272b35;
+
+    border-radius: 25px;
+
+    padding: 55px;
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 80px;
+}
+
+
+.price-title > p:last-child {
+    color: #9297a3;
+
+    margin-top: 15px;
+}
+
+
+.price-list {
+    border-top: 1px solid #292d36;
+}
+
+
+.price-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 20px 5px;
+
+    border-bottom: 1px solid #292d36;
+
+    font-size: 14px;
+}
+
+
+.price-row b {
+    color: #d8b36a;
+}
+
+
+
+/* CONTACT */
+
+.contact {
+    padding: 100px 7%;
+
+    background: #0e1117;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+}
+
+
+.contact-text {
+    color: #9297a3;
+
+    max-width: 550px;
+
+    margin-top: 25px;
+}
+
+
+.contact-card {
+    background: #11141b;
+
+    border: 1px solid #292d36;
+
+    border-radius: 20px;
+
+    padding: 30px;
+}
+
+
+.contact-item {
+    display: flex;
+
+    gap: 15px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #292d36;
+}
+
+
+.contact-item > span {
+    font-size: 22px;
+}
+
+
+.contact-item small {
+    display: block;
+
+    color: #777c87;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.contact-item strong {
+    font-size: 14px;
+}
+
+
+.whatsapp {
+    display: block;
+
+    background: #d8b36a;
+
+    color: #111;
+
+    text-align: center;
+
+    padding: 13px;
+
+    margin-top: 22px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    font-size: 13px;
+}
+
+
+
+/* FOOTER */
+
+footer {
+    padding: 30px 7%;
+
+    border-top: 1px solid #20232b;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+footer p {
+    color: #777c87;
+
+    font-size: 11px;
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:900px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .price-box,
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media(max-width:550px) {
+
+    header {
+        padding: 0 5%;
+    }
+
+    .top-button {
+        display: none;
+    }
+
+    .hero,
+    .services,
+    .prices,
+    .contact {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-card {
+        min-height: 350px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading > p {
+        margin-top: 20px;
+    }
+
+    .price-box {
+        padding: 30px;
+    }
+
+    .contact {
+        gap: 40px;
+    }
+
+    footer {
+        padding: 25px 5%;
+
+        display: block;
+    }
+
+    footer p {
+        margin-top: 15px;
+    }
+
+}
